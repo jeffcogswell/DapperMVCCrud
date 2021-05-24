@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewPeople", "NewPeople\NewPeople.csproj", "{61905EF3-7BCA-4D8C-8661-160AA8C9FBED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlackOverload", "SlackOverload\SlackOverload.csproj", "{675963C6-1744-4A76-84AD-16B92350531A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61905EF3-7BCA-4D8C-8661-160AA8C9FBED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61905EF3-7BCA-4D8C-8661-160AA8C9FBED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61905EF3-7BCA-4D8C-8661-160AA8C9FBED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61905EF3-7BCA-4D8C-8661-160AA8C9FBED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{675963C6-1744-4A76-84AD-16B92350531A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{675963C6-1744-4A76-84AD-16B92350531A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{675963C6-1744-4A76-84AD-16B92350531A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{675963C6-1744-4A76-84AD-16B92350531A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {07EDF219-5D63-48E2-84BC-8E16D33C6A17}
+	EndGlobalSection
+EndGlobal
