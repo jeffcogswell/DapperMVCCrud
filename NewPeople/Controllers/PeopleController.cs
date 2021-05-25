@@ -1,29 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Dapper.Contrib.Extensions;
 using NewPeople.Models;
-using Dapper;
-using System.Data;
+
 
 namespace NewPeople.Controllers
 {
     public class PeopleController : Controller
     {
-        //static MySqlConnection db = new MySqlConnection("Server=localhost;Database=newpeople;Uid=root;Password=abc123");
-        IDbConnection db;
-
-        public PeopleController(IDbConnection _db)
-        {
-            db = _db;
-        }
-
         public IActionResult Index()
         {
-            List<People> peeps = db.GetAll<People>().ToList();
+            List<People> peeps = DAL.GetAllPeopleByLastName();
             return View(peeps);
         }
 
@@ -37,20 +26,20 @@ namespace NewPeople.Controllers
         [HttpPost]
         public IActionResult Create(People peep)
         {
-            db.Insert(peep);
+            DAL.Create(peep);
             return RedirectToAction("Index");
         }
 
         public IActionResult editform(int id)
         {
-            People peep = db.Get<People>(id);
+            People peep = DAL.GetIndividualPerson(id);
             return View(peep);
         }
 
         [HttpPost]
         public IActionResult edit(People peep)
         {
-            bool s = db.Update(peep);
+            DAL.EditPerson(peep);
             return RedirectToAction("index");
         }
 
@@ -61,8 +50,7 @@ namespace NewPeople.Controllers
 
         public IActionResult delete(int id)
         {
-            People peep = db.Get<People>(id);
-            db.Delete<People>(peep);
+            DAL.DeletePerson(id);
             return RedirectToAction("index");
         }
     }

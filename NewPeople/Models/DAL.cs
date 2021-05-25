@@ -1,32 +1,51 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using NewPeople.Models;
-using Dapper;
 using Dapper.Contrib.Extensions;
+using Dapper;
+using System.Data;
 
 namespace NewPeople.Models
 {
-    public class OLDDAL
+    public class DAL
     {
-        static MySqlConnection db = new MySqlConnection("Server=localhost;Database=newpeople;Uid=root;Password=abc123");
-        public static List<People> GetAll()
+        public static IDbConnection db;
+        
+        static public void Create(People peep)
         {
+            db.Insert(peep);
+        }
+        
+        static public List<People> GetAllPeopleByLastName()
+        {
+            //List<People> peeps = db.GetAll<People>().ToList();
             List<People> peeps = db.Query<People>("select * from people order by lastname").ToList();
             return peeps;
         }
 
-        public static void Insert(People peep)
+        static public List<People> GetAllPeopleWithLastName(string lastname)
         {
-            db.Insert(peep);
+            List<People> peeps = db.Query<People>($"select * from people where lastname = '{lastname}' order by lastname").ToList();
+            return peeps;
         }
 
-        public static People GetOne(int id)
+        static public People GetIndividualPerson(int id)
         {
             return db.Get<People>(id);
         }
 
+        static public void EditPerson(People peep)
+        {
+            db.Update(peep);
+        }
+
+        static public void DeletePerson(int id)
+        {
+            People peep = new People();
+            peep.id = id;
+            db.Delete<People>(peep);  // delete from People where id = 5;
+        }
     }
 }
