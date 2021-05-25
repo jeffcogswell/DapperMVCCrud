@@ -9,7 +9,7 @@ using Dapper.Contrib.Extensions;
 
 namespace NewPeople.Models
 {
-    public class DAL
+    public class OLDDAL
     {
         static MySqlConnection db = new MySqlConnection("Server=localhost;Database=newpeople;Uid=root;Password=abc123");
         public static List<People> GetAll()

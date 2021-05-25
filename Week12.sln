@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewPeople", "NewPeople\NewP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlackOverload", "SlackOverload\SlackOverload.csproj", "{675963C6-1744-4A76-84AD-16B92350531A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepInj", "DepInj\DepInj.csproj", "{DAF60D39-694F-4F97-9814-DAA0D5AAFE9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{675963C6-1744-4A76-84AD-16B92350531A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{675963C6-1744-4A76-84AD-16B92350531A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{675963C6-1744-4A76-84AD-16B92350531A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAF60D39-694F-4F97-9814-DAA0D5AAFE9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF60D39-694F-4F97-9814-DAA0D5AAFE9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF60D39-694F-4F97-9814-DAA0D5AAFE9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF60D39-694F-4F97-9814-DAA0D5AAFE9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
