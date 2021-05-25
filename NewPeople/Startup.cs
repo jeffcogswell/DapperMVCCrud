@@ -4,8 +4,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -24,6 +26,9 @@ namespace NewPeople
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            string connstring = Configuration.GetConnectionString("wdb");
+            IDbConnection db = new MySqlConnection(connstring);
+            services.AddTransient<IDbConnection>((sp) => db);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
