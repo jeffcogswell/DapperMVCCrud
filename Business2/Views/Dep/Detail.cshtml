@@ -1,0 +1,23 @@
+﻿@model List<Employee>
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h1>Detail</h1>
+
+There are @Model.Count employees in @ViewBag.depart.name department.
+
+@foreach (Employee emp in Model)
+{
+    <h2>@emp.firstname @emp.lastname </h2>
+    <div>ID: @emp.id</div>
+    <div>Phone: @emp.phone</div>
+    <div>Email: @emp.email</div>
+    <div>@emp.department</div>
+    if (emp.username == DAL.CurrentUser || DAL.CurrentUser == "admin")
+    {
+        <div><a href="/dep/DeleteEmployee?dept=@emp.department&emp=@emp.id" class="btn btn-danger">Delete</a></div>
+    }
+}
+
+<a href="/dep/AddEmployeeForm/@ViewBag.depart.id" class="btn btn-primary">Add</a>

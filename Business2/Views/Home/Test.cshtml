@@ -1,0 +1,12 @@
+﻿@model List<Department>
+@{
+    ViewData["Title"] = "Test";
+}
+
+<h1>Test</h1>
+
+@foreach (Department dep in Model)
+{
+    @dep.id
+    <br />
+}

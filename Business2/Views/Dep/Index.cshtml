@@ -1,0 +1,16 @@
+﻿@model List<Department>
+@{
+    ViewData["Title"] = "Index";
+}
+
+Welcome @DAL.CurrentUser!
+
+<h1>Departments</h1>
+<div style="font-weight:bold">Click on a department to view and change employees in that department.</div>
+
+@foreach (Department dep in Model)
+{
+    <h3><a href="/dep/detail/@dep.id">@dep.name</a></h3>
+    <div>ID: @dep.id</div>
+    <div>Location: @dep.location</div>
+}
